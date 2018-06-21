@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Mapea 4 Source: style/stylecategory.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Mapea 4</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.filter.html">M.filter</a></li><li><a href="M.filter.spatial.html">M.filter.spatial</a></li><li><a href="M.Handlebars.helpers.html">M.Handlebars.helpers</a></li><li><a href="M.plugin_.html">M.plugin</a></li><li><a href="M.remote.html">M.remote</a></li><li><a href="M.html#.Style">M.Style</a></li><li><a href="M.style.align.html">M.style.align</a></li><li><a href="M.style.baseline.html">M.style.baseline</a></li><li><a href="M.style.chart_.html">M.style.chart</a></li><li><a href="M.style_.html#.Feature">M.style.Feature</a></li><li><a href="M.style.overflow.html">M.style.overflow</a></li><li><a href="M.style.pattern.html">M.style.pattern</a></li><li><a href="M.style.quantification.html">M.style.quantification</a></li><li><a href="M.style_.html#.Simple">M.style.Simple</a></li><li><a href="M.style.state.html">M.style.state</a></li><li><a href="M.style.textoverflow.html">M.style.textoverflow</a></li><li><a href="M.template.html">M.template</a></li><li><a href="M.utils.html">M.utils</a></li><li><a href="M.window.html">M.window</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.ClusteredFeature.html">M.ClusteredFeature</a></li><li><a href="M.Control.html">M.Control</a></li><li><a href="M.control.GetFeatureInfo.html">M.control.GetFeatureInfo</a></li><li><a href="M.control.LayerSwitcher.html">M.control.LayerSwitcher</a></li><li><a href="M.control.Location.html">M.control.Location</a></li><li><a href="M.control.Mouse.html">M.control.Mouse</a></li><li><a href="M.control.Navtoolbar.html">M.control.Navtoolbar</a></li><li><a href="M.control.OverviewMap.html">M.control.OverviewMap</a></li><li><a href="M.control.Panzoom.html">M.control.Panzoom</a></li><li><a href="M.control.Panzoombar.html">M.control.Panzoombar</a></li><li><a href="M.control.Scale.html">M.control.Scale</a></li><li><a href="M.control.ScaleLine.html">M.control.ScaleLine</a></li><li><a href="M.control.WMCSelector.html">M.control.WMCSelector</a></li><li><a href="M.evt.EventsManager.html">M.evt.EventsManager</a></li><li><a href="M.evt.Listener.html">M.evt.Listener</a></li><li><a href="M.facade.Base.html">M.facade.Base</a></li><li><a href="M.Feature.html">M.Feature</a></li><li><a href="M.format.GeoJSON.html">M.format.GeoJSON</a></li><li><a href="M.format.WKT.html">M.format.WKT</a></li><li><a href="M.handler.Features.html">M.handler.Features</a></li><li><a href="M.Label.html">M.Label</a></li><li><a href="M.Layer.html">M.Layer</a></li><li><a href="M.layer.GeoJSON.html">M.layer.GeoJSON</a></li><li><a href="M.layer.KML.html">M.layer.KML</a></li><li><a href="M.layer.Mapbox.html">M.layer.Mapbox</a></li><li><a href="M.layer.OSM.html">M.layer.OSM</a></li><li><a href="M.layer.Vector.html">M.layer.Vector</a></li><li><a href="M.layer.WFS.html">M.layer.WFS</a></li><li><a href="M.layer.WMC.html">M.layer.WMC</a></li><li><a href="M.layer.WMS.html">M.layer.WMS</a></li><li><a href="M.layer.WMTS.html">M.layer.WMTS</a></li><li><a href="M.Map.html">M.Map</a></li><li><a href="M.Object.html">M.Object</a></li><li><a href="M.Parameters.html">M.Parameters</a></li><li><a href="M.Plugin.html">M.Plugin</a></li><li><a href="M.Popup.html">M.Popup</a></li><li><a href="M.Popup.Tab.html">M.Popup.Tab</a></li><li><a href="M.remote.Response.html">M.remote.Response</a></li><li><a href="M.style.Category.html">M.style.Category</a></li><li><a href="M.style.Chart.html">M.style.Chart</a></li><li><a href="M.style.chart.Variable.html">M.style.chart.Variable</a></li><li><a href="M.style.Choropleth.html">M.style.Choropleth</a></li><li><a href="M.style.Cluster.html">M.style.Cluster</a></li><li><a href="M.style.Line.html">M.style.Line</a></li><li><a href="M.style.Point.html">M.style.Point</a></li><li><a href="M.style.Polygon.html">M.style.Polygon</a></li><li><a href="M.style.Proportional.html">M.style.Proportional</a></li><li><a href="M.ui.Panel.html">M.ui.Panel</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#*@protected">* @protected</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: style/stylecategory.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">goog.provide('M.style.Category');
+goog.require('M.Style');
+
+/**
+ * @namespace M.style.Category
+ */
+(function() {
+  /**
+   * @classdesc
+   * Main constructor of the class. Creates a categoryStyle
+   * with parameters specified by the user
+   * for the implementation
+   * provided by the user
+   * @constructor
+   * @extends {M.Style}
+   * @param {String} attributeName
+   * @param {Map&lt;String,M.Style>} categoryStyles
+   * @api stable
+   */
+  M.style.Category = (function(attributeName, categoryStyles, options = {}) {
+    if (M.utils.isNullOrEmpty(attributeName)) {
+      M.exception("No se ha especificado el nombre del atributo.");
+    }
+
+    /**
+     * TODO
+     * @public
+     * @type {String}
+     * @api stable
+     * @expose
+     */
+    this.attributeName_ = attributeName;
+
+    /**
+     * TODO
+     * @public
+     * @type {Map&lt;String,M.Style>}
+     * @api stable
+     * @expose
+     */
+    this.categoryStyles_ = categoryStyles;
+    goog.base(this, options, {});
+  });
+  goog.inherits(M.style.Category, M.Style);
+
+  /**
+   * This function apply the styleCategory object to specified layer
+   *
+   * @function
+   * @public
+   * @param {M.layer.Vector} layer - layer is the layer where we want to apply the new Style
+   * @returns {M.style.Category}
+   * @api stable
+   */
+  M.style.Category.prototype.apply = function(layer) {
+    this.layer_ = layer;
+    this.update_();
+  };
+  /**
+   * This function return the AttributeName
+   *
+   * @function
+   * @public
+   * @returns {String}
+   * @api stable
+   */
+  M.style.Category.prototype.getAttributeName = function() {
+    return this.attributeName_;
+  };
+
+  /**
+   * This function set the AttributeName defined by user
+   *
+   * @function
+   * @public
+   * @param {String} attributeName - newAttributeName is the newAttributeName specified by the user
+   * @returns {M.style.Category}
+   * @api stable
+   */
+  M.style.Category.prototype.setAttributeName = function(attributeName) {
+    this.attributeName_ = attributeName;
+    this.update_();
+    return this;
+  };
+
+  /**
+   * This function return an Array with the diferents Categories
+   *
+   * @function
+   * @public
+   * @returns {Array&lt;String>}
+   * @api stable
+   */
+  M.style.Category.prototype.getCategories = function() {
+    return this.categoryStyles_;
+  };
+
+  /**
+   * This function sets the object categories
+   *
+   * @function
+   * @public
+   * @param {Map&lt;String,M.style>} categories
+   * @return {M.style.styleCategory}
+   * @api stable
+   *
+   */
+  M.style.Category.prototype.setCategories = function(categories) {
+    this.categoryStyles_ = categories;
+    this.update_();
+    return this;
+  };
+
+  /**
+   * This function return the style of a specified Category defined by user
+   *
+   * @function
+   * @public
+   * @param {String} string - string is the name of a category value
+   * @returns {M.style}
+   * @api stable
+   */
+  M.style.Category.prototype.getStyleForCategory = function(category) {
+    return this.categoryStyles_[category];
+  };
+
+  /**
+   * This function set the style of a specified Category defined by user
+   *
+   * @function
+   * @public
+   * @param {String} category - category is the name of a category value
+   * @param {M.style.Simple} style - style is the new style to switch
+   * @returns {M.style.Category}
+   * @api stable
+   */
+  M.style.Category.prototype.setStyleForCategory = function(category, style) {
+    this.categoryStyles_[category] = style;
+    this.update_();
+    return this;
+  };
+
+  /**
+   * This function updates the canvas of style
+   *
+   * @function
+   * @public
+   * @api stable
+   */
+  M.style.Category.prototype.updateCanvas = function() {
+    let canvasImages = [];
+    this.updateCanvasPromise_ = new Promise((success, fail) =>
+      this.loadCanvasImages_(0, canvasImages, success));
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @private
+   * @param {CanvasRenderingContext2D} vectorContext - context of style canvas
+   */
+  M.style.Category.prototype.loadCanvasImages_ = function(currentIndex, canvasImages, callbackFn) {
+    let categories = this.getCategories();
+    let categoryNames = Object.keys(categories);
+
+    // base case
+    if (currentIndex === categoryNames.length) {
+      this.drawGeometryToCanvas(canvasImages, callbackFn);
+    }
+    // recursive case
+    else {
+      let category = categoryNames[currentIndex];
+      let style = this.getStyleForCategory(category);
+      let image = new Image();
+      image.crossOrigin = 'Anonymous';
+      let scope_ = this;
+      image.onload = function() {
+        canvasImages.push({
+          'image': this,
+          'categoryName': category
+        });
+        scope_.loadCanvasImages_((currentIndex + 1), canvasImages, callbackFn);
+      };
+      image.onerror = function() {
+        canvasImages.push({
+          'categoryName': category
+        });
+        scope_.loadCanvasImages_((currentIndex + 1), canvasImages, callbackFn);
+      };
+      style.updateCanvas();
+      if (style.get('icon.src')) {
+        M.utils.getImageSize(style.get('icon.src')).then((img) => {
+          image.width = style.get('icon.scale') ? img.width * style.get('icon.scale') : img.width;
+          image.height = style.get('icon.scale') ? img.height * style.get('icon.scale') : img.height;
+          image.src = style.toImage();
+
+        });
+      }
+      else {
+        image.src = style.toImage();
+      }
+    }
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @public
+   * @param {CanvasRenderingContext2D} vectorContext - context of style canvas
+   * @api stable
+   */
+  M.style.Category.prototype.drawGeometryToCanvas = function(canvasImages, callbackFn) {
+    let heights = canvasImages.map(canvasImage => canvasImage['image'].height);
+    let widths = canvasImages.map(canvasImage => canvasImage['image'].width);
+
+    let vectorContext = this.canvas_.getContext('2d');
+    vectorContext.canvas.height = heights.reduce((acc, h) => acc + h + 5);
+    vectorContext.textBaseline = "middle";
+
+    let maxWidth = Math.max.apply(widths, widths);
+    canvasImages.forEach((canvasImage, index) => {
+      let image = canvasImage['image'];
+      let categoryName = canvasImage['categoryName'];
+      let coordinateY = 0;
+      let prevHeights = heights.slice(0, index);
+      if (!M.utils.isNullOrEmpty(prevHeights)) {
+        coordinateY = prevHeights.reduce((acc, h) => acc + h + 5);
+        coordinateY += 5;
+      }
+      let imageHeight = 0;
+      if (!M.utils.isNullOrEmpty(image)) {
+        imageHeight = image.height;
+        vectorContext.drawImage(image, (maxWidth - image.width) / 2, coordinateY, image.width, image.height);
+      }
+      vectorContext.fillText(categoryName, maxWidth + 5, coordinateY + (imageHeight / 2));
+    }, this);
+
+    callbackFn();
+  };
+
+  /**
+   * This function updates the style
+   *
+   * @function
+   * @private
+   * @return {M.style.styleCategory}
+   * @api stable
+   */
+  M.style.Category.prototype.update_ = function() {
+    if (!M.utils.isNullOrEmpty(this.layer_)) {
+      let styleOther = this.categoryStyles_['other'];
+      this.layer_.getFeatures().forEach(function(feature) {
+        let value = feature.getAttribute(this.attributeName_);
+        let style = this.categoryStyles_[value];
+        if (!M.utils.isNullOrEmpty(style)) {
+          feature.setStyle(style);
+        }
+        else if (!M.utils.isNullOrEmpty(styleOther)) {
+          feature.setStyle(styleOther);
+        }
+      }.bind(this));
+      this.updateCanvas();
+    }
+  };
+})();
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Mapea 4 Copyright © 2016 Junta de Andalucía
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Fri Mar 23rd 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>

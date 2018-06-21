@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Mapea 4 Source: popup.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Mapea 4</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.filter.html">M.filter</a></li><li><a href="M.filter.spatial.html">M.filter.spatial</a></li><li><a href="M.Handlebars.helpers.html">M.Handlebars.helpers</a></li><li><a href="M.plugin_.html">M.plugin</a></li><li><a href="M.remote.html">M.remote</a></li><li><a href="M.html#.Style">M.Style</a></li><li><a href="M.style.align.html">M.style.align</a></li><li><a href="M.style.baseline.html">M.style.baseline</a></li><li><a href="M.style.chart_.html">M.style.chart</a></li><li><a href="M.style_.html#.Feature">M.style.Feature</a></li><li><a href="M.style.overflow.html">M.style.overflow</a></li><li><a href="M.style.pattern.html">M.style.pattern</a></li><li><a href="M.style.quantification.html">M.style.quantification</a></li><li><a href="M.style_.html#.Simple">M.style.Simple</a></li><li><a href="M.style.state.html">M.style.state</a></li><li><a href="M.style.textoverflow.html">M.style.textoverflow</a></li><li><a href="M.template.html">M.template</a></li><li><a href="M.utils.html">M.utils</a></li><li><a href="M.window.html">M.window</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.ClusteredFeature.html">M.ClusteredFeature</a></li><li><a href="M.Control.html">M.Control</a></li><li><a href="M.control.GetFeatureInfo.html">M.control.GetFeatureInfo</a></li><li><a href="M.control.LayerSwitcher.html">M.control.LayerSwitcher</a></li><li><a href="M.control.Location.html">M.control.Location</a></li><li><a href="M.control.Mouse.html">M.control.Mouse</a></li><li><a href="M.control.Navtoolbar.html">M.control.Navtoolbar</a></li><li><a href="M.control.OverviewMap.html">M.control.OverviewMap</a></li><li><a href="M.control.Panzoom.html">M.control.Panzoom</a></li><li><a href="M.control.Panzoombar.html">M.control.Panzoombar</a></li><li><a href="M.control.Scale.html">M.control.Scale</a></li><li><a href="M.control.ScaleLine.html">M.control.ScaleLine</a></li><li><a href="M.control.WMCSelector.html">M.control.WMCSelector</a></li><li><a href="M.evt.EventsManager.html">M.evt.EventsManager</a></li><li><a href="M.evt.Listener.html">M.evt.Listener</a></li><li><a href="M.facade.Base.html">M.facade.Base</a></li><li><a href="M.Feature.html">M.Feature</a></li><li><a href="M.format.GeoJSON.html">M.format.GeoJSON</a></li><li><a href="M.format.WKT.html">M.format.WKT</a></li><li><a href="M.handler.Features.html">M.handler.Features</a></li><li><a href="M.Label.html">M.Label</a></li><li><a href="M.Layer.html">M.Layer</a></li><li><a href="M.layer.GeoJSON.html">M.layer.GeoJSON</a></li><li><a href="M.layer.KML.html">M.layer.KML</a></li><li><a href="M.layer.Mapbox.html">M.layer.Mapbox</a></li><li><a href="M.layer.OSM.html">M.layer.OSM</a></li><li><a href="M.layer.Vector.html">M.layer.Vector</a></li><li><a href="M.layer.WFS.html">M.layer.WFS</a></li><li><a href="M.layer.WMC.html">M.layer.WMC</a></li><li><a href="M.layer.WMS.html">M.layer.WMS</a></li><li><a href="M.layer.WMTS.html">M.layer.WMTS</a></li><li><a href="M.Map.html">M.Map</a></li><li><a href="M.Object.html">M.Object</a></li><li><a href="M.Parameters.html">M.Parameters</a></li><li><a href="M.Plugin.html">M.Plugin</a></li><li><a href="M.Popup.html">M.Popup</a></li><li><a href="M.Popup.Tab.html">M.Popup.Tab</a></li><li><a href="M.remote.Response.html">M.remote.Response</a></li><li><a href="M.style.Category.html">M.style.Category</a></li><li><a href="M.style.Chart.html">M.style.Chart</a></li><li><a href="M.style.chart.Variable.html">M.style.chart.Variable</a></li><li><a href="M.style.Choropleth.html">M.style.Choropleth</a></li><li><a href="M.style.Cluster.html">M.style.Cluster</a></li><li><a href="M.style.Line.html">M.style.Line</a></li><li><a href="M.style.Point.html">M.style.Point</a></li><li><a href="M.style.Polygon.html">M.style.Polygon</a></li><li><a href="M.style.Proportional.html">M.style.Proportional</a></li><li><a href="M.ui.Panel.html">M.ui.Panel</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#*@protected">* @protected</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: popup.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">goog.provide('M.Popup');
+
+goog.require('M.utils');
+goog.require('M.exception');
+goog.require('M.facade.Base');
+
+(function () {
+  /**
+   * @classdesc
+   * Main constructor of the class. Creates a layer
+   * with parameters specified by the user
+   *
+   * @constructor
+   * @extends {M.facade.Base}
+   * @api stable
+   */
+  M.Popup = (function (options) {
+    /**
+     * TODO
+     * @private
+     * @type {Array&lt;Number>}
+     */
+    this.coord_ = null;
+
+    /**
+     * TODO
+     * @private
+     * @type {Array&lt;M.Popup.Tab>}
+     */
+    this.tabs_ = [];
+
+    /**
+     * TODO
+     * @private
+     * @type {HTMLElement}
+     */
+    this.element_ = null;
+
+    /**
+     * TODO
+     * @private
+     * @type {string}
+     */
+    this.status_ = M.Popup.status.COLLAPSED;
+
+    var impl = new M.impl.Popup(options);
+
+    // calls the super constructor
+    goog.base(this, impl);
+  });
+  goog.inherits(M.Popup, M.facade.Base);
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.getTabs = function () {
+    return this.tabs_;
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.removeTab = function (tabToRemove) {
+    this.tabs_ = this.tabs_.filter(function (tab) {
+      return (tab.content !== tabToRemove.content);
+    });
+    this.update();
+  };
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.addTab = function (tabOptions) {
+    var tab = tabOptions;
+    if (!(tab instanceof M.Popup.Tab)) {
+      tab = new M.Popup.Tab(tabOptions);
+    }
+    this.tabs_.push(tab);
+    this.update();
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.addTo = function (map, coordinate) {
+    this.map_ = map;
+    if (M.utils.isNullOrEmpty(this.element_)) {
+      var this_ = this;
+      M.template.compile(M.Popup.TEMPLATE, {
+        'jsonp': true,
+        'vars': {
+          'tabs': this.tabs_
+        }
+      }).then(function (html) {
+        this_.element_ = html;
+        this_.addEvents(html);
+        this_.getImpl().addTo(map, html);
+        this_.show(coordinate);
+      });
+    }
+    else {
+      this.getImpl().addTo(map, this.element_);
+      this.show(coordinate);
+    }
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.update = function () {
+    if (!M.utils.isNullOrEmpty(this.map_)) {
+      var this_ = this;
+      M.template.compile(M.Popup.TEMPLATE, {
+        'jsonp': true,
+        'vars': {
+          'tabs': this.tabs_
+        }
+      }).then(function (html) {
+        this_.element_ = html;
+        this_.addEvents(html);
+        this_.getImpl().setContainer(html);
+        this_.show(this_.coord_);
+      });
+    }
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.show = function (coord) {
+    this.coord_ = coord;
+    this.getImpl().show(this.coord_, function () {
+      this.fire(M.evt.SHOW);
+    }.bind(this));
+    // this.setStatus_(M.Popup.status.COLLAPSED);
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.hide = function (evt) {
+    if (!M.utils.isNullOrEmpty(evt)) {
+      evt.preventDefault();
+    }
+    this.getImpl().hide();
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.switchTab = function (index) {
+    if (this.tabs_.length > index) {
+      var tab = this.tabs_[index];
+      this.setContent_(tab.content);
+      this.show(this.coord_);
+    }
+  };
+
+  /**
+   * TODO
+   * @private
+   * @function
+   */
+  M.Popup.prototype.setContent_ = function (content) {
+    this.getImpl().setContent(content);
+  };
+
+  /**
+   * TODO
+   * @private
+   * @function
+   */
+  M.Popup.prototype.getContent = function () {
+    return this.getImpl().getContent();
+  };
+
+  /**
+   * TODO
+   * @private
+   * @function
+   */
+  M.Popup.prototype.addEvents = function (html) {
+    // adds tabs events
+    var touchstartY;
+    var tabs = html.querySelectorAll('div.m-tab');
+    Array.prototype.forEach.call(tabs, function (tab) {
+      goog.events.listen(tab, [
+            goog.events.EventType.CLICK,
+            goog.events.EventType.TOUCHEND
+         ], function (evt) {
+        evt.preventDefault();
+        // 5px tolerance
+        var touchendY = evt.clientY;
+        if ((evt.type === goog.events.EventType.CLICK) || (Math.abs(touchstartY - touchendY) &lt; 5)) {
+          // remove m-activated from all tabs
+          Array.prototype.forEach.call(tabs, function (addedTab) {
+            goog.dom.classlist.remove(addedTab, 'm-activated');
+          });
+          goog.dom.classlist.add(tab, 'm-activated');
+          var index = tab.getAttribute('data-index');
+          this.switchTab(index);
+        }
+      }, false, this);
+    }, this);
+
+    // adds close event
+    var closeBtn = html.querySelector('a.m-popup-closer');
+    goog.events.listen(closeBtn, [
+         goog.events.EventType.CLICK,
+         goog.events.EventType.TOUCHEND
+      ], this.hide, false, this);
+
+    // mobile events
+    var headerElement = html.querySelector('div.m-tabs');
+    if (M.utils.isNullOrEmpty(headerElement)) {
+      headerElement = html.querySelector('div.m-content > div.m-header');
+    }
+    if (!M.utils.isNullOrEmpty(headerElement)) {
+      var topPosition;
+      goog.events.listen(headerElement, [
+            goog.events.EventType.TOUCHSTART
+         ], function (evt) {
+        evt.preventDefault();
+        touchstartY = evt.clientY;
+        if (this.status_ === M.Popup.status.COLLAPSED) {
+          topPosition = 0.9 * M.window.HEIGHT;
+        }
+        else if (this.status_ === M.Popup.status.DEFAULT) {
+          topPosition = 0.45 * M.window.HEIGHT;
+        }
+        else if (this.status_ === M.Popup.status.FULL) {
+          topPosition = 0;
+        }
+        goog.dom.classlist.add(html, 'm-no-animation');
+      }, false, this);
+
+      goog.events.listen(headerElement, [
+            goog.events.EventType.TOUCHMOVE
+         ], function (evt) {
+        evt.preventDefault();
+        var touchY = evt.clientY;
+        var translatedPixels = touchY - touchstartY;
+        goog.style.setStyle(html, 'top', (topPosition + translatedPixels) + 'px');
+      }, false, this);
+
+      goog.events.listen(headerElement, [
+            goog.events.EventType.TOUCHEND
+         ], function (evt) {
+        evt.preventDefault();
+        var touchendY = evt.clientY;
+        this.manageCollapsiblePopup_(touchstartY, touchendY);
+      }, false, this);
+
+      // CLICK EVENTS
+      goog.events.listen(headerElement, [
+            goog.events.EventType.MOUSEUP
+         ], function (evt) {
+        evt.preventDefault();
+        // COLLAPSED --> DEFAULT
+        if (this.status_ === M.Popup.status.COLLAPSED) {
+          this.setStatus_(M.Popup.status.DEFAULT);
+        }
+        // DEFAULT --> FULL
+        else if (this.status_ === M.Popup.status.DEFAULT) {
+          this.setStatus_(M.Popup.status.FULL);
+        }
+        else {
+          this.setStatus_(M.Popup.status.COLLAPSED);
+        }
+      }, false, this);
+    }
+  };
+
+  /**
+   * TODO
+   * @private
+   * @function
+   */
+  M.Popup.prototype.setStatus_ = function (status) {
+    if (status !== this.status_) {
+      goog.dom.classlist.remove(this.element_, this.status_);
+      this.status_ = status;
+      goog.dom.classlist.add(this.element_, this.status_);
+      goog.style.setStyle(this.element_, 'top', '');
+      goog.dom.classlist.remove(this.element_, 'm-no-animation');
+      // mobile center
+      if (M.window.WIDTH &lt;= M.config.MOBILE_WIDTH) {
+        this.getImpl().centerByStatus(status, this.coord_);
+      }
+    }
+  };
+
+  /**
+   * TODO
+   * @private
+   * @function
+   */
+  M.Popup.prototype.manageCollapsiblePopup_ = function (touchstartY, touchendY) {
+    var touchPerc = (touchendY * 100) / M.window.HEIGHT;
+    var distanceTouch = Math.abs(touchstartY - touchendY);
+    var distanceTouchPerc = (distanceTouch * 100) / M.window.HEIGHT;
+    // 10% tolerance
+    if (distanceTouchPerc > 10) {
+
+      /*
+       * manages collapsing events depending on
+       * the current position of the popup header and the direction
+       *
+       * These are the thresholds:
+       *  _____________     ____________
+       * |     0%      |       FULL
+       * |-------------|
+       * |             |
+       * |     45%     |
+       * |             | 2
+       * |-------------|   ------------
+       * |             | 1      DEFAULT
+       * |             |
+       * |             |
+       * |-------------|   ------------
+       * |     85%     |      COLLAPSED
+       * |_____________|
+       *
+       */
+      if (this.status_ === M.Popup.status.COLLAPSED) {
+        // 2
+        if (touchPerc &lt; 45) {
+          this.setStatus_(M.Popup.status.FULL);
+        }
+        // 1
+        else if (touchPerc &lt; 85) {
+          this.setStatus_(M.Popup.status.DEFAULT);
+        }
+        else {
+          this.setStatus_(M.Popup.status.COLLAPSED);
+        }
+      }
+      else if (this.status_ === M.Popup.status.DEFAULT) {
+        // 1
+        if (touchPerc > 45) {
+          this.setStatus_(M.Popup.status.COLLAPSED);
+        }
+        // 2
+        else if (touchPerc &lt; 45) {
+          this.setStatus_(M.Popup.status.FULL);
+        }
+        else {
+          this.setStatus_(M.Popup.status.DEFAULT);
+        }
+      }
+      else if (this.status_ === M.Popup.status.FULL) {
+        // 1
+        if (touchPerc > 45) {
+          this.setStatus_(M.Popup.status.COLLAPSED);
+        }
+        // 2
+        else if (touchPerc > 0) {
+          this.setStatus_(M.Popup.status.DEFAULT);
+        }
+        else {
+          this.setStatus_(M.Popup.status.FULL);
+        }
+      }
+    }
+    else {
+      this.setStatus_(this.status_);
+    }
+  };
+
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.getCoordinate = function () {
+    return this.coord_;
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.setCoordinate = function (coord) {
+    this.coord_ = coord;
+    if (!M.utils.isNullOrEmpty(this.element_)) {
+      this.getImpl().show(coord);
+    }
+  };
+
+  /**
+   * TODO
+   * @public
+   * @function
+   * @api stable
+   */
+  M.Popup.prototype.destroy = function () {
+    this.tabs_.length = 0;
+    this.coord_ = null;
+    this.fire(M.evt.DESTROY);
+  };
+
+  /**
+   * Template for popup
+   * @const
+   * @type {string}
+   * @public
+   * @api stable
+   */
+  M.Popup.TEMPLATE = 'popup.html';
+
+  /**
+   * status of this popup
+   * @const
+   * @type {object}
+   * @public
+   * @api stable
+   */
+  M.Popup.status = {};
+
+  /**
+   * collapsed status of this popup
+   * @const
+   * @type {string}
+   * @public
+   * @api stable
+   */
+  M.Popup.status.COLLAPSED = 'm-collapsed';
+
+  /**
+   * default status of this popup
+   * @const
+   * @type {string}
+   * @public
+   * @api stable
+   */
+  M.Popup.status.DEFAULT = 'm-default';
+
+  /**
+   * full status of this popup
+   * @const
+   * @type {string}
+   * @public
+   * @api stable
+   */
+  M.Popup.status.FULL = 'm-full';
+
+  /**
+   * @classdesc
+   * Main constructor of the class. Creates a layer
+   * with parameters specified by the user
+   *
+   * @constructor
+   */
+  M.Popup.Tab = (function (options) {
+    options = (options || {});
+
+    /**
+     * TODO
+     * @public
+     * @type {String}
+     * @api stable
+     * @expose
+     */
+    this.icon = options.icon;
+
+    /**
+     * TODO
+     * @public
+     * @type {String}
+     * @api stable
+     * @expose
+     */
+    this.title = options.title;
+
+    /**
+     * TODO
+     * @public
+     * @type {String}
+     * @api stable
+     * @expose
+     */
+    this.content = options.content;
+  });
+})();
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Mapea 4 Copyright © 2016 Junta de Andalucía
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Fri Mar 23rd 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
