@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Mapea 4 Source: utils/utils.js</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Mapea 4</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.filter.html">M.filter</a></li><li><a href="M.filter.spatial.html">M.filter.spatial</a></li><li><a href="M.Handlebars.helpers.html">M.Handlebars.helpers</a></li><li><a href="M.plugin_.html">M.plugin</a></li><li><a href="M.remote.html">M.remote</a></li><li><a href="M.html#.Style">M.Style</a></li><li><a href="M.style.align.html">M.style.align</a></li><li><a href="M.style.baseline.html">M.style.baseline</a></li><li><a href="M.style.chart_.html">M.style.chart</a></li><li><a href="M.style_.html#.Feature">M.style.Feature</a></li><li><a href="M.style.overflow.html">M.style.overflow</a></li><li><a href="M.style.pattern.html">M.style.pattern</a></li><li><a href="M.style.quantification.html">M.style.quantification</a></li><li><a href="M.style_.html#.Simple">M.style.Simple</a></li><li><a href="M.style.state.html">M.style.state</a></li><li><a href="M.style.textoverflow.html">M.style.textoverflow</a></li><li><a href="M.template.html">M.template</a></li><li><a href="M.utils.html">M.utils</a></li><li><a href="M.window.html">M.window</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="M.ClusteredFeature.html">M.ClusteredFeature</a></li><li><a href="M.Control.html">M.Control</a></li><li><a href="M.control.GetFeatureInfo.html">M.control.GetFeatureInfo</a></li><li><a href="M.control.LayerSwitcher.html">M.control.LayerSwitcher</a></li><li><a href="M.control.Location.html">M.control.Location</a></li><li><a href="M.control.Mouse.html">M.control.Mouse</a></li><li><a href="M.control.Navtoolbar.html">M.control.Navtoolbar</a></li><li><a href="M.control.OverviewMap.html">M.control.OverviewMap</a></li><li><a href="M.control.Panzoom.html">M.control.Panzoom</a></li><li><a href="M.control.Panzoombar.html">M.control.Panzoombar</a></li><li><a href="M.control.Scale.html">M.control.Scale</a></li><li><a href="M.control.ScaleLine.html">M.control.ScaleLine</a></li><li><a href="M.control.WMCSelector.html">M.control.WMCSelector</a></li><li><a href="M.evt.EventsManager.html">M.evt.EventsManager</a></li><li><a href="M.evt.Listener.html">M.evt.Listener</a></li><li><a href="M.facade.Base.html">M.facade.Base</a></li><li><a href="M.Feature.html">M.Feature</a></li><li><a href="M.format.GeoJSON.html">M.format.GeoJSON</a></li><li><a href="M.format.WKT.html">M.format.WKT</a></li><li><a href="M.handler.Features.html">M.handler.Features</a></li><li><a href="M.Label.html">M.Label</a></li><li><a href="M.Layer.html">M.Layer</a></li><li><a href="M.layer.GeoJSON.html">M.layer.GeoJSON</a></li><li><a href="M.layer.KML.html">M.layer.KML</a></li><li><a href="M.layer.Mapbox.html">M.layer.Mapbox</a></li><li><a href="M.layer.OSM.html">M.layer.OSM</a></li><li><a href="M.layer.Vector.html">M.layer.Vector</a></li><li><a href="M.layer.WFS.html">M.layer.WFS</a></li><li><a href="M.layer.WMC.html">M.layer.WMC</a></li><li><a href="M.layer.WMS.html">M.layer.WMS</a></li><li><a href="M.layer.WMTS.html">M.layer.WMTS</a></li><li><a href="M.Map.html">M.Map</a></li><li><a href="M.Object.html">M.Object</a></li><li><a href="M.Parameters.html">M.Parameters</a></li><li><a href="M.Plugin.html">M.Plugin</a></li><li><a href="M.Popup.html">M.Popup</a></li><li><a href="M.Popup.Tab.html">M.Popup.Tab</a></li><li><a href="M.remote.Response.html">M.remote.Response</a></li><li><a href="M.style.Category.html">M.style.Category</a></li><li><a href="M.style.Chart.html">M.style.Chart</a></li><li><a href="M.style.chart.Variable.html">M.style.chart.Variable</a></li><li><a href="M.style.Choropleth.html">M.style.Choropleth</a></li><li><a href="M.style.Cluster.html">M.style.Cluster</a></li><li><a href="M.style.Line.html">M.style.Line</a></li><li><a href="M.style.Point.html">M.style.Point</a></li><li><a href="M.style.Polygon.html">M.style.Polygon</a></li><li><a href="M.style.Proportional.html">M.style.Proportional</a></li><li><a href="M.ui.Panel.html">M.ui.Panel</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#*@protected">* @protected</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-12">
+	
+		<div id="main">
+			
+
+		<h1 class="page-title">Source: utils/utils.js</h1>
+    
+<section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">goog.provide('M.utils');
+
+goog.require('M.polyfills');
+goog.require('M.geom.wkt.type');
+goog.require('goog.color');
+goog.require('goog.color.alpha');
+
+/**
+ * @namespace M.utils
+ */
+(function() {
+  'use strict';
+
+  /**
+   * This function checks if the obj is null or empty
+   *
+   * @function
+   * @param {string|Object|Array&lt;*>} obj
+   * @returns {boolean}
+   * @api stable
+   */
+  M.utils.isNullOrEmpty = function(obj) {
+    var nullOrEmpty = false;
+
+    if (M.utils.isNull(obj)) {
+      nullOrEmpty = true;
+    }
+    else if (M.utils.isArray(obj)) {
+      nullOrEmpty = true;
+      if (obj.length > 0) {
+        nullOrEmpty = !obj.some(function(objElem) {
+          return !M.utils.isNullOrEmpty(objElem);
+        });
+      }
+    }
+    else if ((typeof obj === 'string') &amp;&amp; (obj.trim().length === 0)) {
+      nullOrEmpty = true;
+    }
+
+    return nullOrEmpty;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isNull = function(obj) {
+    var isNull = false;
+
+    if (!M.utils.isBoolean(obj) &amp;&amp; (typeof obj !== 'number')) {
+      if (M.utils.isUndefined(obj)) {
+        isNull = true;
+      }
+      else if (!obj) {
+        isNull = true;
+      }
+      else if (obj === null) {
+        isNull = true;
+      }
+    }
+
+    return isNull;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isArray = function(obj) {
+    var isArray = false;
+    if (!M.utils.isNull(obj)) {
+      isArray = (Object.prototype.toString.call(obj) === Object.prototype.toString
+        .call([]));
+    }
+    return isArray;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isFunction = function(obj) {
+    var isFunction = false;
+    if (!M.utils.isNull(obj)) {
+      isFunction = ((typeof obj === 'function') &amp;&amp; !M.utils.isUndefined(obj.call));
+    }
+    return isFunction;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isObject = function(obj) {
+    var isObject = false;
+    if (!M.utils.isNull(obj)) {
+      isObject = ((typeof obj === 'object') &amp;&amp; !M.utils.isUndefined(obj.toString));
+    }
+    return isObject;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isString = function(obj) {
+    var isString = false;
+    if (!M.utils.isNull(obj)) {
+      isString = (typeof obj === 'string');
+    }
+    return isString;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isBoolean = function(obj) {
+    var isBoolean = false;
+    if ((obj !== null) &amp;&amp; !M.utils.isUndefined(obj)) {
+      isBoolean = (typeof obj === 'boolean');
+    }
+    return isBoolean;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isUrl = function(obj) {
+    var isUrl = false;
+    if (!M.utils.isNull(obj) &amp;&amp; M.utils.isString(obj)) {
+      isUrl = /(https?\:\/\/[^\*]+)/.test(obj);
+    }
+    return isUrl;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isUndefined = function(obj) {
+    return (typeof obj === 'undefined');
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.normalize = function(stringToNormalize, upperCase) {
+    var normalizedString = stringToNormalize;
+    if (!M.utils.isNullOrEmpty(normalizedString) &amp;&amp; M.utils.isString(normalizedString)) {
+      normalizedString = normalizedString.trim();
+      normalizedString = upperCase ? normalizedString.toUpperCase() : normalizedString.toLowerCase();
+    }
+    return normalizedString;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.getParameterValue = function(paramName, url) {
+    var parameterValue = null;
+
+    paramName = paramName.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+    var parameters = url;
+    var idxQuery = parameters.indexOf('?');
+    if (idxQuery != -1) {
+      parameters = parameters.substring(idxQuery);
+      var regex = new RegExp("[\\?&amp;]" + paramName + "=([^&amp;#]*)");
+      parameterValue = regex.exec(parameters);
+      if (parameterValue !== null) {
+        parameterValue = decodeURIComponent(parameterValue[1].replace(/\+/g, " "));
+      }
+    }
+
+    return parameterValue;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.addParameters = function(url, params) {
+    var requestUrl = url;
+    if (requestUrl.indexOf('?') === -1) {
+      requestUrl += '?';
+    }
+    else if (requestUrl.charAt(requestUrl.length - 1) !== '?') {
+      requestUrl += '&amp;';
+    }
+
+    var requestParams = '';
+    if (M.utils.isObject(params)) {
+      for (var param in params) {
+        requestParams += param;
+        requestParams += '=';
+        requestParams += encodeURIComponent(params[param]);
+        requestParams += '&amp;';
+      }
+      // removes the last '&amp;'
+      requestParams = requestParams.substring(0, requestParams.length - 1);
+    }
+    else if (M.utils.isString(params)) {
+      requestParams = params;
+    }
+    requestUrl += requestParams;
+
+    return requestUrl;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.generateRandom = function(prefix, sufix) {
+    var random = '';
+
+    // adds prefix
+    if (!M.utils.isNullOrEmpty(prefix)) {
+      random = prefix;
+    }
+
+    // generates random
+    random = random.concat(Math.random()).replace(/0\./, '');
+
+    // adds sufix
+    if (!M.utils.isNullOrEmpty(sufix)) {
+      random = random.concat(sufix);
+    }
+
+    return random;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.getWMSGetCapabilitiesUrl = function(serverUrl, version) {
+    var wmsGetCapabilitiesUrl = serverUrl;
+
+    // request
+    wmsGetCapabilitiesUrl = M.utils.addParameters(wmsGetCapabilitiesUrl, 'request=GetCapabilities');
+    // service
+    wmsGetCapabilitiesUrl = M.utils.addParameters(wmsGetCapabilitiesUrl, 'service=WMS');
+
+    // PATCH: En mapea 3 no se manda luego aquí tampoco. Hay servicios que dan error....
+    //      // version
+    //      wmsGetCapabilitiesUrl = M.utils.addParameters(wmsGetCapabilitiesUrl, {
+    //         'version': version
+    //      });
+
+    return wmsGetCapabilitiesUrl;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.getWMTSGetCapabilitiesUrl = function(serverUrl, version) {
+    var wmtsGetCapabilitiesUrl = serverUrl;
+
+    // request
+    wmtsGetCapabilitiesUrl = M.utils.addParameters(wmtsGetCapabilitiesUrl, 'request=GetCapabilities');
+    // service
+    wmtsGetCapabilitiesUrl = M.utils.addParameters(wmtsGetCapabilitiesUrl, 'service=WMTS');
+    // version
+    if (!M.utils.isNullOrEmpty(version)) {
+      wmtsGetCapabilitiesUrl = M.utils.addParameters(wmtsGetCapabilitiesUrl, {
+        'version': version
+      });
+    }
+
+    return wmtsGetCapabilitiesUrl;
+  };
+
+  /**
+   * This function generates the resolution array
+   * from min max scales
+   *
+   * @function
+   * @param {Number} maxScale
+   * @param {Number} minScale
+   * @param {Number} zoomLevels
+   * @param {String} units
+   * @returns {Array&lt;Number>} the resolutions
+   * @api stable
+   */
+  M.utils.generateResolutionsFromScales = function(maxScale, minScale, zoomLevels, units) {
+    var minResolution = M.utils.getResolutionFromScale(maxScale, units);
+    var maxResolution = M.utils.getResolutionFromScale(minScale, units);
+
+    return M.utils.fillResolutions(minResolution, maxResolution, zoomLevels);
+  };
+
+  /**
+   * This function generates the resolution array
+   * from min max scales
+   *
+   * @function
+   * @param {Number} maxScale
+   * @param {Number} minScale
+   * @param {Number} zoomLevels
+   * @param {String} units
+   * @returns {Array&lt;Number>} the resolutions
+   * @api stable
+   */
+  M.utils.generateResolutionsFromExtent = function(extent, size, zoomLevels, units) {
+    let [wExtent, hExtent] = [null, null];
+    if (M.utils.isArray(extent)) {
+      wExtent = (extent[2] - extent[0]);
+      hExtent = (extent[3] - extent[1]);
+    }
+    else if (M.utils.isObject(extent)) {
+      wExtent = (extent.x.max - extent.x.min);
+      hExtent = (extent.y.max - extent.y.min);
+    }
+    else if (M.utils.isString(extent)) {
+      extent = extent.split(",");
+      wExtent = (extent[2] - extent[0]);
+      hExtent = (extent[3] - extent[1]);
+    }
+    var wResolution = wExtent / size[0];
+    var hResolution = hExtent / size[1];
+
+    var maxResolution = Math.max(wResolution, hResolution);
+
+    var resolutions = M.utils.fillResolutions(null, maxResolution, zoomLevels);
+
+    return resolutions;
+  };
+
+  /**
+   * This function generates the resolution array
+   * from min max resolutions
+   *
+   * @function
+   * @param {Number} minResolution
+   * @param {Number} maxResolution
+   * @param {Number} numZoomLevels
+   * @returns {Array&lt;Number>} the resolutions
+   * @api stable
+   */
+  M.utils.fillResolutions = function(minResolution, maxResolution, numZoomLevels) {
+    var resolutions = new Array(numZoomLevels);
+
+    minResolution = Number.parseFloat(minResolution);
+    maxResolution = Number.parseFloat(maxResolution);
+
+    // if maxResolution and minResolution are set, we calculate
+    // the base for exponential scaling that starts at
+    // maxResolution and ends at minResolution in numZoomLevels
+    // steps.
+    var base = 2;
+    if (!Number.isNaN(minResolution)) {
+      base = Math.pow((maxResolution / minResolution), (1 / (numZoomLevels - 1)));
+    }
+    for (var i = 0; i &lt; numZoomLevels; i++) {
+      resolutions[i] = maxResolution / Math.pow(base, i);
+    }
+    //sort resolutions array descendingly
+    resolutions.sort(function(a, b) {
+      return (b - a);
+    });
+    return resolutions;
+  };
+
+  /**
+   * This function calculates the resolution
+   * for a provided scale
+   *
+   * @function
+   * @param {Number} scale
+   * @param {String} units
+   * @returns {Number} the resolution for the specified scale
+   * @api stable
+   */
+  M.utils.getResolutionFromScale = function(scale, units) {
+    var resolution;
+    if (!M.utils.isNullOrEmpty(scale)) {
+      if (M.utils.isNull(units)) {
+        units = "degrees";
+      }
+      // normalize scale
+      var normScale = (scale > 1.0) ? (1.0 / scale) : scale;
+      resolution = 1 / (normScale * M.INCHES_PER_UNIT[units] * M.DOTS_PER_INCH);
+    }
+    return resolution;
+  };
+
+  /**
+   * This function calculates the scale
+   * for a provided resolution
+   *
+   * @function
+   * @param {Number} resolution
+   * @param {String} units
+   * @returns {Number} the scale for the specified resolution
+   * @api stable
+   */
+  M.utils.getScaleFromResolution = function(resolution, units) {
+    if (M.utils.isNullOrEmpty(units)) {
+      units = "degrees";
+    }
+
+    var scale = resolution * M.INCHES_PER_UNIT[units] * M.DOTS_PER_INCH;
+
+    return scale;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.stringToHtml = function(htmlTxt) {
+    var html;
+
+    if (!M.utils.isNullOrEmpty(htmlTxt)) {
+      var div = document.createElement('div');
+      div.innerHTML = htmlTxt;
+      html = div.children[0];
+    }
+
+    return html;
+  };
+
+  /**
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.htmlToString = function(html) {
+    var text;
+
+    if (!M.utils.isNullOrEmpty(html)) {
+      var div = document.createElement('div');
+      goog.dom.appendChild(div, html);
+      text = div.innerHTML;
+    }
+
+    return text;
+  };
+
+  /**
+   * formated String
+   *
+   * @function
+   * @param {String} String text to format string
+   * @returns {String} beautifyString formated String
+   * @api stable
+   */
+  M.utils.beautifyString = function(text) {
+    var beautifyString;
+
+    // 1 to lower case
+    beautifyString = text.toLowerCase();
+
+    // 2 trim
+    beautifyString = beautifyString.trim(beautifyString);
+
+    // 3 first char to upper case
+    beautifyString = beautifyString.charAt(0).toUpperCase() + beautifyString.slice(1);
+
+    // 4 replaces "_" by spaces
+    beautifyString = beautifyString.replace(/\_/g, " ");
+
+    // 5 simplifies spaces
+    beautifyString = beautifyString.replace(/\s+/, " ");
+
+    // 6 to camel case
+    beautifyString = beautifyString.replace(/(\s\w)+/g, function(match) {
+      return match.toUpperCase();
+    });
+
+    // 7 common words to lower case
+    beautifyString = beautifyString.replace(/\s+(de|del|las?|el|los?|un|unas?|unos?|y|a|al|en)\s+/ig, function(match) {
+      return match.toLowerCase();
+    });
+
+    return beautifyString;
+  };
+
+
+  /**
+   * formated String
+   *
+   * @function
+   * @param {attributeName} String
+   * @returns {Number} formated String
+   * @api stable
+   */
+  M.utils.beautifyAttribute = function(attributeName) {
+    var beautifyString = attributeName;
+
+    if (beautifyString) {
+      //OpenLayers.String.trim
+      beautifyString = beautifyString.trim();
+      if (beautifyString.length > 0) {
+        var idxPoints = beautifyString.indexOf(":");
+        if (idxPoints != -1) {
+          idxPoints++;
+          beautifyString = beautifyString.substring(idxPoints, beautifyString.length);
+        }
+      }
+    }
+    return beautifyString;
+  };
+
+  /**
+   * formated String
+   *
+   * @function
+   * @param {attributeName} String
+   * @returns {Number} formated String
+   * @api stable
+   */
+  M.utils.beautifyAttributeName = function(rawAttributeName) {
+    var attributeName = M.utils.normalize(rawAttributeName);
+    attributeName = attributeName.replace(/_(\w)/g, function(match, group) {
+      return ' '.concat(group.toUpperCase());
+    });
+    attributeName = attributeName.replace(/^\w/, function(match) {
+      return match.toUpperCase();
+    });
+    return attributeName;
+  };
+
+  /**
+   * formated String
+   *
+   * @function
+   * @param {attributeName} String
+   * @returns {Number} formated String
+   * @api stable
+   */
+  M.utils.concatUrlPaths = function(paths) {
+    var finalUrl = null;
+    if (!M.utils.isNullOrEmpty(paths)) {
+      finalUrl = paths[0];
+      finalUrl = finalUrl.replace(/\/+\s*$/, '');
+      for (var i = 1, ilen = paths.length; i &lt; ilen; i++) {
+        var path = paths[i];
+        if (path.indexOf('/') !== 0) {
+          finalUrl = finalUrl.concat('/');
+        }
+        finalUrl = finalUrl.concat(path);
+      }
+    }
+    return finalUrl;
+  };
+
+  /**
+   *
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.includes = function(array, searchElement, fromIndex) {
+    var O = Object(array);
+    var len = parseInt(O.length) || 0;
+    if (len === 0) {
+      return false;
+    }
+    var n = parseInt(arguments[2]) || 0;
+    var k;
+    if (n >= 0) {
+      k = n;
+    }
+    else {
+      k = len + n;
+      if (k &lt; 0) {
+        k = 0;
+      }
+    }
+    var currentElement;
+    while (k &lt; len) {
+      currentElement = O[k];
+      if (searchElement === currentElement || Object.equals(searchElement, currentElement) ||
+        (searchElement !== searchElement &amp;&amp; currentElement !== currentElement)) {
+        return true;
+      }
+      k++;
+    }
+    return false;
+  };
+
+  /**
+   *
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.extend = function(target, source, override) {
+    for (var prop in source) {
+      if (M.utils.isUndefined(target[prop])) {
+        target[prop] = source[prop];
+      }
+      else if (M.utils.isObject(target[prop])) {
+        M.utils.extend(target[prop], source[prop], override);
+      }
+      else if ((override === true)) {
+        target[prop] = source[prop];
+      }
+    }
+    return target;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.escapeXSS = function(xssValue) {
+    var validValue;
+
+    // &amp; --> &amp;amp;
+    validValue = xssValue.replace(/\&amp;/g, '&amp;amp;');
+
+    // &lt; --> &amp;lt;
+    validValue = validValue.replace(/&lt;/g, '&amp;lt;');
+
+    // > --> &amp;gt;
+    validValue = validValue.replace(/\>/g, '&amp;gt;');
+
+    // " --> &amp;quot;
+    validValue = validValue.replace(/\"/g, '&amp;quot;');
+
+    // ' --> &amp;#x27;
+    validValue = validValue.replace(/\'/g, '&amp;#x27;');
+
+    // / --> &amp;#x2F;
+    validValue = validValue.replace(/\//g, '&amp;#x2F;');
+
+    return validValue;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.escapeJSCode = function(jsCode) {
+    var validValue;
+
+    validValue = jsCode.replace(/(&lt;\s*script[^\>]*\>)+[^&lt;]*(&lt;\s*\/\s*script[^\>]*\>)+/ig, '');
+    validValue = validValue.replace(/((\"|\')\s*\+\s*)?\s*eval\s*\(.*\)\s*(\+\s*(\"|\'))?/ig, '');
+
+    return validValue;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.enableTouchScroll = function(elem) {
+    if ('ontouchstart' in goog.global) {
+      var scrollStartPos = 0;
+
+      goog.events.listen(elem, goog.events.EventType.TOUCHSTART, function(evt) {
+        scrollStartPos = this.scrollTop + evt.getBrowserEvent().touches[0].pageY;
+      });
+
+      goog.events.listen(elem, goog.events.EventType.TOUCHMOVE, function(evt) {
+        this.scrollTop = scrollStartPos - evt.getBrowserEvent().touches[0].pageY;
+      });
+    }
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.rgbToHex = function(rgbColor) {
+    var hexColor;
+    if (goog.color.isValidColor(rgbColor)) {
+      hexColor = goog.color.parse(rgbColor).hex;
+    }
+    else {
+      try {
+        hexColor = goog.color.alpha.parse(rgbColor).hex;
+      }
+      catch (err) {}
+    }
+    return hexColor;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.rgbaToHex = function(rgbaColor) {
+    var hexColor;
+    try {
+      hexColor = chroma(rgbaColor).hex();
+    }
+    catch (err) {}
+    return hexColor;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.getOpacityFromRgba = function(rgbaColor) {
+    var opacity;
+
+    var rgbaRegExp = /^rgba\s*\((\s*\d+\s*\,){3}\s*([\d\.]+)\s*\)$/;
+    if (rgbaRegExp.test(rgbaColor)) {
+      opacity = rgbaColor.replace(rgbaRegExp, '$2');
+      try {
+        opacity = parseFloat(opacity);
+      }
+      catch (err) {}
+    }
+
+    return opacity;
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.sameUrl = function(url1, url2) {
+    url1 = url1.replace(/^(.+)\/$/, '$1').replace(/^(.+)\?$/, '$1');
+    url2 = url2.replace(/^(.+)\/$/, '$1').replace(/^(.+)\?$/, '$1');
+
+    return url1.toLowerCase() === url2.toLowerCase();
+  };
+
+  /**
+   * TODO
+   *
+   * @function
+   * @api stable
+   */
+  M.utils.isGeometryType = function(type) {
+    var geometricTypes = [
+         M.geom.wkt.type.GEOMETRY.toLowerCase(),
+         "GeometryPropertyType".toLowerCase(),
+         M.geom.wkt.type.POINT.toLowerCase(),
+         M.geom.wkt.type.LINE_STRING.toLowerCase(),
+         M.geom.wkt.type.LINEAR_RING.toLowerCase(),
+         M.geom.wkt.type.POLYGON.toLowerCase(),
+         M.geom.wkt.type.MULTI_POINT.toLowerCase(),
+         M.geom.wkt.type.MULTI_LINE_STRING.toLowerCase(),
+         M.geom.wkt.type.MULTI_POLYGON.toLowerCase(),
+         M.geom.wkt.type.GEOMETRY_COLLECTION.toLowerCase(),
+         M.geom.wkt.type.CIRCLE.toLowerCase(),
+         "pointpropertytype",
+         "polygonpropertytype",
+         "linestringpropertytype",
+         "geometrypropertytype",
+         "multisurfacepropertytype",
+         "multilinestringpropertytype",
+         "surfacepropertytype",
+         "geometrypropertytype",
+         "geometryarraypropertytype",
+         "multigeometrypropertytype",
+         "multipolygonpropertytype",
+         "multipointpropertytype",
+         "abstractgeometricaggregatetype",
+         "pointarraypropertytype",
+         "curvearraypropertytype",
+         "solidpropertytype",
+         "solidarraypropertytype"
+      ];
+    type = type.toLowerCase();
+    return (geometricTypes.indexOf(type) !== -1);
+  };
+
+  /**
+   * This function decodes html entities into
+   * text
+   *
+   * @function
+   * @param {String} encodedHtml encoded text with HTML entities
+   * @returns {String} text decoded
+   * @api stable
+   */
+  M.utils.decodeHtml = function(encodedHtml) {
+    let txtarea = document.createElement("textarea");
+    txtarea.innerHTML = encodedHtml;
+    return txtarea.value;
+  };
+
+  /**
+   * This function gets text content from
+   * an html string or element
+   *
+   * @function
+   * @param {HTMLElement | String} html string or element with HTML tags
+   * @returns {String} text contained by the HTML tags
+   * @api stable
+   */
+  M.utils.getTextFromHtml = function(html) {
+    let htmlText = html;
+    if (!M.utils.isString(html) &amp;&amp; html.outerHTML) {
+      htmlText = html.outerHTML;
+    }
+    let divElement = document.createElement("DIV");
+    divElement.innerHTML = htmlText;
+    return divElement.textContent || divElement.innerText || "";
+  };
+
+  /**
+   * This function gets an array scale color in hexadecimal format
+   * @function
+   * @public
+   * @return {Array&lt;string>} array scale color in hexadecimal format
+   * @api stable
+   */
+  M.utils.generateColorScale = function(color1, color2, n_classes) {
+    return chroma.scale([color1, color2]).colors(n_classes);
+  };
+
+  /**
+   * This function gets the inverse of a color. The inverse of a color
+   * is the diff between the hexadecimal value of white (0xFFFFFF)
+   * and the hexadecimal value of the color.
+   * @function
+   * @public
+   * @param {string} color
+   * @return {string} inverse color in hexadecimal format
+   * @api stable
+   */
+  M.utils.inverseColor = function(color) {
+    let inverseColor;
+    if (M.utils.isString(color)) {
+      let hexColor = chroma(color).hex();
+      hexColor = hexColor.replace(/^\#/, '0x');
+      inverseColor = chroma(0xFFFFFF - hexColor).hex();
+    }
+
+    return inverseColor;
+  };
+
+  /**
+   * This function gets the geometry type of a layer.
+   * @function
+   * @public
+   * @param {M.layer.Vector} layer - layer vector
+   * @return {string} geometry type of layer
+   * @api stable
+   */
+  M.utils.getGeometryType = function(layer) {
+    if (M.utils.isNullOrEmpty(layer) || M.utils.isNullOrEmpty(layer.getFeatures())) {
+      return null;
+    }
+    let firstFeature = layer.getFeatures()[0];
+    if (!M.utils.isNullOrEmpty(firstFeature) &amp;&amp; !M.utils.isNullOrEmpty(firstFeature.getGeometry())) {
+      return firstFeature.getGeometry().type;
+    }
+    return null;
+  };
+
+  /**
+   * This function returns the appropiate style to geomtry layer
+   * with parameter options.
+   * @function
+   * @public
+   * @param {object} options - style options
+   * @param {M.layer.Vector} layer -
+   * @return {M.style.Simple}
+   * @api stable
+   */
+  M.utils.generateStyleLayer = function(options, layer) {
+    let style;
+    switch (M.utils.getGeometryType(layer)) {
+      case "Point":
+      case "MultiPoint":
+        style = new M.style.Point(options);
+        break;
+      case "LineString":
+      case "MultiLineString":
+        style = new M.style.Line(options);
+        break;
+      case "Polygon":
+      case "MultiPolygon":
+        style = new M.style.Polygon(options);
+        break;
+      default:
+        return null;
+    }
+    return style;
+  };
+
+  /**
+   * This function returns a color as string with opacity
+   * @function
+   * @public
+   * @param {string} color
+   * @param {number} opacity
+   * @return {string}
+   * @api stable
+   */
+  M.utils.getRgba = function(color, opacity) {
+    return chroma(color).alpha(opacity).css();
+  };
+
+  /**
+   * This function returns if two sets are equals
+   * @function
+   * @public
+   * @param {array} array
+   * @param {array} array2
+   * @return {bool}
+   * @api stable
+   */
+  M.utils.setEquals = function(array, array2) {
+    let equals = false;
+    if (array.length === array2.length) {
+      equals = array.every(e => array2.some(e2 => e2.equals(e)));
+    }
+    return equals;
+  };
+
+  /**
+   * This function set implementation of this control
+   *
+   * @public
+   * @function
+   * @param {M.Map} impl to add the plugin
+   * @api stable
+   */
+  M.utils.extends = function(dest = {}, src = {}) {
+    if (!M.utils.isNullOrEmpty(src)) {
+      Object.keys(src).forEach(key => {
+        let value = src[key];
+        if (M.utils.isArray(value)) {
+          value = [...value];
+        }
+        else if (M.utils.isObject(value)) {
+          value = M.utils.extends({}, value);
+        }
+        if (M.utils.isNullOrEmpty(dest[key])) {
+          dest[key] = value;
+        }
+        else if (M.utils.isObject(dest[key])) {
+          M.utils.extends(dest[key], value);
+        }
+      }, this);
+    }
+    return dest;
+  };
+
+  /**
+   * This function returns an array whith breaks between head and tail of an array
+   * @function
+   * @public
+   * @param {array} array
+   * @param {number} breaks
+   * @return {array}
+   * @api stable
+   */
+  M.utils.generateIntervals = function(array, breaks) {
+    let intervals = [...array];
+    if (array.length &lt; breaks) {
+      let step = (array[0] + array[1]) / (breaks - 1);
+      for (let i = 1; i &lt; breaks - 1; i++) {
+        intervals[i] = step * i;
+      }
+      intervals = [...intervals, array[1]];
+    }
+    return intervals;
+  };
+
+  /**
+   * This functions returns the width and height of a image from src
+   * @function
+   * @public
+   * @param {string} url
+   * @return {Array&lt;number>}
+   * @api stable
+   */
+  M.utils.getImageSize = function(url) {
+    let image = new Image();
+    return new Promise((resolve, reject) => {
+      image.onload = () => resolve(image);
+      image.src = url;
+    });
+  };
+})();
+</pre>
+    </article>
+</section>
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+	<span class="copyright">
+	Mapea 4 Copyright © 2016 Junta de Andalucía
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+	
+		on Fri Mar 23rd 2018
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
